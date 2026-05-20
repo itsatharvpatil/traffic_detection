@@ -54,11 +54,11 @@ opencv-python
 numpy
 ```
 
-Install with:
+## Install with:
 ```bash
 pip install ultralytics opencv-python numpy
 ```
-Training Details
+## Training Details
 
 Base model: YOLOv8n (nano) pretrained weights
 Dataset: Pascal VOC (train2007 + train2012 + val2007 + val2012 for training, test2007 for evaluation)
@@ -69,18 +69,15 @@ Optimizer: SGD with cosine LR scheduling
 Augmentation: Mosaic, mixed-precision training (AMP)
 Hardware: Google Colab T4 GPU
 
-
-Honest Project Notes
+## Honest Project Notes
 
 The model is trained on all 20 Pascal VOC classes, not exclusively traffic classes
 The webcam demo screenshot was captured in an indoor environment — it demonstrates pipeline stability and detection confidence, not a traffic-specific scene
 For traffic-specific inference, use the class filter below:
 
 pythonresults = model(frame, conf=0.4, classes=[1, 5, 6, 13, 14])
-# bicycle, bus, car, motorbike, person
+ bicycle, bus, car, motorbike, person
 
-License
-MIT License — see LICENSE file.
 ## License
 This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
 
